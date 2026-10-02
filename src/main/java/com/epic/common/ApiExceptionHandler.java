@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import com.epic.product.ProductNotFoundException;
+
 @RestControllerAdvice
 public class ApiExceptionHandler {
 
@@ -25,5 +27,11 @@ public class ApiExceptionHandler {
 		body.put("message", "Error de validación");
 		body.put("errors", fieldErrors);
 		return body;
+	}
+
+	@ExceptionHandler(ProductNotFoundException.class)
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	public Map<String, String> handleProductNotFound(ProductNotFoundException ex) {
+		return Map.of("message", ex.getMessage());
 	}
 }
