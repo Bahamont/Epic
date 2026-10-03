@@ -1,3 +1,7 @@
+## integrantes
+Mauricio de los rios
+Rodrigo Medellin 
+Daniel Ortiz 
 # Epic — Catálogo de Computadoras
 
 Proyecto Spring Boot para mostrar un catálogo de computadoras y registrar solicitudes de cotización.
